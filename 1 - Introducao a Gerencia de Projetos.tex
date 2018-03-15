@@ -1,0 +1,630 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  This Beamer template was created by Cameron Bracken.
+%%  Anyone can freely use or modify it for any purpose
+%%  without attribution.
+%%
+%%  The current presentation created by Jeferson L. R. Souza (jefecomp) is based on the template created by Cameron Bracken. 
+%%  
+%%  Small modifications have been introduced and anyone is free to use such modified version.
+%%
+%% Last Modified: June 14, 2015.
+
+\documentclass[xcolor=x11names,compress]{beamer}
+
+%% General document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{decorations.fractals}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Hyperref
+\usepackage{hyperref}
+
+%Multirow package
+\usepackage{multirow} 
+
+%Math packages
+\usepackage{amsmath}
+\usepackage{textcomp}
+
+
+%% Beamer Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\useoutertheme[footline=authorinstitutetitle,subsection=false,shadow]{miniframes}
+\useinnertheme{default}
+\usefonttheme{professionalfonts}
+\usepackage{palatino}
+
+\setbeamerfont{title like}{shape=\scshape,series=\bfseries}
+\setbeamerfont{frametitle}{shape=\scshape,series=\bfseries}
+
+\setbeamercolor*{lower separation line head}{bg=Green3} 
+\setbeamercolor*{upper separation line foot}{bg=Green3} 
+\setbeamercolor*{normal text}{fg=black,bg=white} 
+\setbeamercolor*{alerted text}{fg=black,bg=black!10} 
+\setbeamercolor*{example text}{fg=black} 
+\setbeamercolor*{structure}{fg=black}
+ 
+\setbeamercolor*{palette tertiary}{fg=black,bg=black!3} 
+\setbeamercolor*{palette quaternary}{fg=black,bg=black!10} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{blocks}[rounded] [shadow=true]
+\setbeamertemplate{frametitle continuation}[from second][(Continuação)]
+
+%%  declaring picture extensions and default path
+\DeclareGraphicsExtensions{.png, .jpg, .pdf}
+\graphicspath{{pictures/}}
+
+%% Supporting source code lists
+\usepackage{listings}
+\lstset{breakatwhitespace,
+language=Java,
+columns=fullflexible,
+keepspaces,
+breaklines,
+tabsize=3, 
+showstringspaces=false,
+extendedchars=true}
+
+%Text position
+\usepackage{textpos}
+\setlength{\TPHorizModule}{128mm}
+\setlength{\TPVertModule}{96mm}
+
+\usepackage{array}
+
+%Puting text and other float elements over pictures
+\usepackage[percent]{overpic}
+
+
+%% Hyperlinks over all the document
+\usepackage{hyperref}
+
+%% Controlling text alignment
+\usepackage{ragged2e}
+
+%% Framed text
+\usepackage{framed}
+
+%% Math packages
+\usepackage{amsmath}
+
+\begin{document}
+
+\title[Introdução à Gerência de Projetos \hskip20mm \insertframenumber / \inserttotalframenumber  \hskip33mm \inserttitlegraphic]{Introdução à Gerência de Projetos \\[4mm]
+\includegraphics[keepaspectratio,width=.4\textwidth]{project-management-2738521_1920}}
+\author[@2018 Prof. Jeferson Souza, MSc (jefecomp) - All rights reserved.]{
+	\textcolor{blue}{Prof. Jeferson Souza, MSc.} \\[1mm] 
+	\textcolor{blue}{\textit{{\footnotesize (jefecomp) }}}\\[1.5mm]
+	 \underline{{\footnotesize jeferson.souza@udesc.br}}
+	 \vspace*{1mm}
+}
+\institute[]{\centering \includegraphics[keepaspectratio,width=.5\textwidth]{template/logo_udesc_joinville_horizontal_assinatura}}
+
+\date{}
+
+\titlegraphic{\includegraphics[keepaspectratio,width=.2\textwidth]{template/logo_udesc_joinville_horizontal_assinatura}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[plain,noframenumbering]
+\titlepage
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conceitos}
+\subsection{Conceitos}
+\begin{frame}{O que é um Projeto?}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Esforço temporário empreendido para criar um produto, serviço, ou resultado exclusivo;
+
+\item O termo temporário significa que todo projeto tem um início e um fim bem definidos;
+
+\item Um projeto termina quando:
+\begin{itemize}
+\itemsep 3mm
+\item Os objetivos foram atingidos;
+
+\item Os objetivos não poderão ser mais atingidos;
+
+\item O projeto não for mais necessário.
+
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks=.5]{Resultados de Um Projeto}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item O resultado de um projeto (normalmente) não é temporário;
+
+\item Um produto (software) resultante de um projeto é desenvolvido para ser utilizado por bastante tempo;
+
+\item Os projetos podem criar:
+\begin{itemize}
+\itemsep 3mm
+
+\item Um produto final ou um componente;
+
+\item Um serviço;
+
+\item Uma contribuição científica.
+
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Motivos da Criação de Projetos}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Demanda de mercado;
+
+\item Necessidade organizacional;
+
+\item Solicitação de um cliente (projeto customizado);
+
+\item Avanço tecnológico;
+
+\item Requisito legal.
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gerência}
+\subsection{Gerência}
+
+\begin{frame}{O que é Gerência de Projetos?}
+
+\begin{block}{}
+
+É a aplicação do conhecimento habilidades, ferramentas, e técnicas para a gestão das atividades do projeto, com o objetivo de atender seus requisitos.
+\end{block}
+
+\pause
+
+\begin{block}{}
+Envolve o planejamento, monitoramento, e controle de pessoas, processos, e eventos relacionados ao desenvolvimento do projeto.
+\end{block}
+
+\end{frame}
+
+\begin{frame}{O que é Gerência de Projetos? (Continuação)}
+
+Gerenciar um projeto inclui:
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Identificar as necessidades;
+
+\item Estabelecer objetivos claros e alcançáveis;
+
+\item Equilibrar os conflitos existentes entre qualidade, escopo, tempo, e custo;
+
+\item Adaptar as especificações, os planos, e as abordagens às diferentes preocupações e expectativas das diversas partes envolvidas.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Qual o papel do Gerente de Projetos?}
+
+\begin{block}{}
+
+O gerente de projetos é a pessoa responsável pela realização dos objetivos do projeto.
+\end{block}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks=.8]{Desenvolvimento de Software Sem Gerência}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item É improvisado;
+
+\item Não é rigorosamente seguido;
+
+\item É altamente dependente dos profissionais;
+
+\item A visão de progresso e da qualidade do produto é baixa;
+
+\item A qualidade do produto é definida em função dos prazos.
+
+\end{itemize}
+
+Uma organização sem gerência no desenvolvimento pode ter características tais como:
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Reacionária;
+
+\item Cronogramas e orçamentos extrapolados com frequência;
+
+\item Prazos curtos, datas urgentes, e qualidade baixa;
+
+\item Atividades de revisão e testes encurtadas ou eliminadas.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Necessidades de Gerência de Projetos de Software}
+
+\begin{block}{}
+Desenvolver software é uma atividade complexa.
+\end{block}
+
+\pause
+
+\begin{block}{}
+Manter pessoas trabalhando corretamente durante um período de tempo também é uma atividade complexa.
+\end{block}
+
+\pause
+
+\begin{alertblock}{\centering Então ...}
+É exatamente para gerir todas essas complexidades que é necessário que um projeto seja gerenciado.
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}{Importância da Gerência de Projetos}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Garantir qualidade do produto final;
+
+\item Ter segurança para lidar com mudanças sofridas ao longo do ciclo de desenvolvimento do projeto;
+
+\item Organizar profissionais de forma a maximizar o seu rendimento.
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Os Quatro Ps}
+\subsection{Os Quatro Ps}
+\begin{frame}{Os Quatro Ps}
+
+A gerência de projetos afeta diretamente quatro principais fatores:
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Pessoas;
+
+\item Produto;
+
+\item Processo;
+
+\item Projeto.
+\end{itemize}
+
+\begin{block}{}
+\centering Esses quatro fatores são denominados de quatro Ps.
+\end{block}
+\end{frame}
+
+\begin{frame}{\underline{P}essoas}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Considerado o fator mais importante para o sucesso de uma projeto (de software);
+
+\item A gestão de pessoas inclui: recrutamento, seleção, treinamento, remuneração, desenvolvimento de carreira, projeto do trabalho, e desenvolvimento da equipe.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{\underline{P}roduto}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Devem ser definidos o escopo e os objetivos de um produto, antes de planejar efetivamente o projeto;
+
+\item A gestão de produto inclui as atividades de engenharia de processos de negócio e engenharia de requisitos.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{\underline{P}rocesso}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Fornecer suporte para a especificação do plano de trabalho;
+
+\item Inclui as atividades de fundamentais e as atividades complementares do planejamento e gerência de projetos.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Projeto}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item O que se deve gerir;
+
+\item Importante entender os fatores críticos dos processos que envolvem o projeto;
+
+\item Necessário atividades de planejamento, monitoramento, e controle do projeto.
+
+\end{itemize}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Papeis}
+\subsection{Papeis}
+
+\begin{frame}{Papéis Dentro de Um Projeto de Software}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Gerentes seniores;
+
+\item Gerentes de projeto;
+
+\item Engenheiros de Software, Analistas de negócio, Analistas de testes, entre outros;
+
+\item Clientes;
+
+\item Usuários finais.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Papéis Dentro de Um Projeto de Software}
+
+\begin{alertblock}{Gerentes seniores:}
+Definem aspectos do negócio que tem influência sobre o projeto.
+\end{alertblock}
+
+\pause
+
+\begin{alertblock}{Gerentes de projeto:}
+Devem planejar, motivar, organizar e controlar os profissionais técnicos, e interagir com o nível de gerência para justificar o andamento do projeto. Além disso tem que estar atentos as necessidades de clientes e usuários finais para evitar imprevistos e viabilidades técnicas que comprometam o planejamento.
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}{Papéis Dentro de Um Projeto de Software}
+
+\begin{alertblock}{Profissionais (Egenheiros de Software, Analistas, etc):}
+Fornecem as aptidões técnicas necessárias para concretizar o projeto;
+\end{alertblock}
+
+\begin{alertblock}{Clientes:}
+Especificam os requisitos do que deverá ser construído.
+\end{alertblock}
+
+\begin{alertblock}{Usuários Finais}
+Pessoas que irão interagir com o software depois que o mesmo estiver pronto para o uso.
+\end{alertblock}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Equipes e Paradigmas}
+\subsection{Equipes}
+
+\begin{frame}{Equipes}
+
+A estrutura de uma equipe para execução de um projeto, depende de diversos fatores, tais como:
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Dificuldade do problema;
+
+\item Tamanho do problema;
+
+\item Período que a equipe ficará junta;
+
+\item Grau de modularização;
+
+\item Qualidade e confiabilidade exigidas pelo sistema;
+
+\item O grau de comunicação exigido pelo projeto.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Paradigmas para Estruturar Equipes}
+
+Existem 3 paradigmas genéricos que podem ser adotados na estruturação de equipes (Classificação de Mantei~\cite{Pressman-2001}):
+
+\begin{itemize}
+
+\itemsep 5mm
+
+\item Paradigma democrático e descentralizado;
+
+\item Paradigma controlado e descentralizado;
+
+\item Paradigma controlado e centralizado.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Paradigma Democrático e Descentralizado}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Não existe a definição de um líder de equipe permanente;
+
+\item Decisões no projeto são realizadas em grupo e baseadas em consenso;
+
+\item Comunicação entre os membros é horizontal.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Paradigma Controlado e Descentralizado}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Define líderes e sublíderes dentro do projeto;
+
+\item Decisões no projeto são realizadas dentro dos grupos de atividades tendo abrangência do líder e sublíderes;
+
+\item Comunicação entre os membros de um sub grupo é horizontal;
+
+\item Comunicações verticais podem ocorrer entre líderes e sublíderes de um grupo de atividades.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Paradigma Controlado e Centralizado}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Define um líder que é o centralizador das decisões da equipe;
+
+\item Líder gerencia os demais membros da equipe;
+
+\item Comunicação entre os membros e líder é vertical.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Paradigmas para Estruturar Equipes II}
+
+Além da classificação de Mantei, temos ainda a classificação de Constantine que define quatro paradigmas~\cite{Pressman-2001}:
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Paradigma fechado;
+
+\item Paradigma aberto;
+
+\item Paradigma aleatório;
+
+\item Paradigma síncrono;
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Paradigma Fechado}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Hierarquia tradicional de autoridades;
+
+\item Funciona bem para produzir software semelhante a anteriores, porém  não permite muita inovação.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Paradigma Aberto}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Trabalho é realizado com intensa colaboração;
+
+\item Decisões baseadas em consenso;
+
+\item Adequado a solução de problemas complexos.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Paradigma Aleatório}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Equipe fracamente estruturada, dependendo diretamente da iniciativa individual;
+
+\item Adequado para casos de inovação, porém não é muito eficiente quando um desempenho ordenado é requerido.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Paradigma Síncrono}
+
+\begin{itemize}
+\itemsep 5mm
+
+\item Segmenta o problema entre os membros da equipe, permitindo que cada um desenvolva uma parte sem muita comunicação.
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{}
+
+\begin{frame}[plain,allowframebreaks,noframenumbering]{Bibliografia}
+
+\begin{thebibliography}{Pressman, 2001}
+
+\bibitem[Pressman, 2001]{Pressman-2001}
+
+Pressman, R.
+
+\newblock{{\em ``Software Engineering: A Practioner's Approach"}. 4th edition. McGraw-Hill, 2001.}
+
+\bibitem[PMI, 2008]{PMI-2008}
+
+Project Management Institute, Inc.
+
+\newblock{{\em ``A Guide To The Project Management Body Of Knowledge"}. 2008.}
+
+\end{thebibliography}
+
+\end{frame}
+
+\begin{frame}[plain,noframenumbering]
+
+\begin{center}
+\includegraphics[keepaspectratio, width=.8\textwidth]{template/happycat-end}
+\end{center}
+\end{frame}
+
+\end{document}

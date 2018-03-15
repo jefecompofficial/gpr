@@ -1,0 +1,4 @@
+untrusted comment: verify with jefecomp.pub
+RWTQZlRUmXlF0yhtpEaOo7MmevhBrcRSAJ+Rc7rC8C2wf7kgY+X8YVJbdDdvhnPM0XSX94nLt5hd4FFmIWmwgiwupAe2PxaqFA0=
+SHA256 (project-management-2738521_1920.jpg) = fd0482e983af7fdf9a024876e28f5d01e14555f235410f07f13f342a68479e08
+SHA256 (project-management-2738521_1920.pdf) = b9626e8d39ea89c823e0dec43cd9cb4e91574824151998d8d0777f843ae25b98
