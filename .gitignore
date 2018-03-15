@@ -1,0 +1,9 @@
+#Ignore latex temporary files on repository
+*~
+*.aux
+*.out
+*.log
+*.snm
+*.synctex.gz
+*.toc
+*.nav
